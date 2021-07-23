@@ -37,6 +37,7 @@
         <span v-if="submitted && !$v.trafficDetails.campaignName.required" class="invalid-feedback">It's a required field, please fill it</span>
       </div>
       <button @click="updateStage(0)">Previous Stage</button>
+      <button @click="fillParams">Fill Params</button>
       <button @click="(e) => handleSubmitFirstBtn(e)">Integration Params</button>
     </template>
     <!-- Integration Stage 3 -->
@@ -46,8 +47,7 @@
       <div v-for="(param, key, index) in integrationParams" :key="key">
         <label class="inputLabel" :for="key">Please fill in {{ key }} param</label> <span class="redStar">*</span>
         <input v-model="integrationParams[key]" :id="key">
-        <span v-if="submitted && !$v.integrationParams[key].required" class="invalid-feedback">It's a required field, please fill it</span>
-        <!--        <span v-if="v$.integrationParams[key].$errors[0]" class="invalid-feedback"> {{ v$.integrationParams[key].$errors[0].$message }} </span>-->
+<!--        <span v-if="submitted && !$v.integrationParams[key].required" class="invalid-feedback">It's a required field, please fill it</span>-->
       </div>
       <button @click="updateStage(0)">Previous Stage</button>
       <button @click="handleLastSubmit">Create Integration</button>
@@ -73,6 +73,7 @@ export default {
         country: '',
         campaignName: ''
       },
+      integrationParams: {},
       submitted: false,
 
       jsonStatham: {
@@ -88,68 +89,87 @@ export default {
           "Unique2": "",
         }
       },
-      integrationParams: {}
     }
   },
-  validations() {
-    return {
-      trafficDetails: {
-        brand: { required, minLength: minLength(3) },
-        platform: { required, minLength: minLength(3) },
-        whitelabel: { required, minLength: minLength(3) },
-        country: { required, minLength: minLength(2) },
-        campaignName: { required, minLength: minLength(2) }
-      }
-    }
-
-  },
-
-
-  methods: {
-    updateStage(value) {
-      //Move forward
-      if (value === 1) {
-        this.currentStage++;
-        console.log(this.currentStage)
-      } else { //Move backward
-        this.currentStage--;
-      }
-    },
-    handleSubmitFirstBtn(e) {
-      this.submitted = true;
-
-      // stop here if form is invalid
-      this.$v.$touch();
-      if (this.$v.$invalid) {
-        return;
-      }
-
-      alert("SUCCESS!! :-)");
-      this.updateStage(1)
-      this.appendFields()
-      this.submitted = false
-    },
-
-    handleLastSubmit(e){
-      this.submitted = true;
-
-      // stop here if form is invalid
-      this.$v.$touch();
-      if (this.$v.$invalid) {
-        return;
-      }
-      alert("Form Submitted Successfully")
-    },
-
-    appendFields() {
+  computed: {
+    params() {
       if (this.jsonStatham.hasOwnProperty(this.trafficDetails.platform)) {
         for (const [key, value] of Object.entries(this.jsonStatham[this.trafficDetails.platform])) {
-          this.integrationParams[key] = value
+          this.integrationParams[key] = value;
         }
-        console.log(this.integrationParams)
+      }
+      return this.integrationParams;
+    },
+    addRequiredValidation() {
+      //Here I need somehow to add validations to params Object.
+      for (const key in this.integrationParams) {
+          this.$options.validations().integrationParams[key].required = required
+         }
       }
     },
-  }
+
+    methods: {
+      fillParams() {
+        this.trafficDetails.whitelabel = "Kalite"
+        this.trafficDetails.platform = "Trackbox"
+        this.trafficDetails.brand = "HashTrade"
+        this.trafficDetails.country = "Israel"
+        this.trafficDetails.campaignName = "TestCampaign"
+      },
+      updateStage(value) {
+        //Move forward
+        if (value === 1) {
+          this.currentStage++;
+        } else { //Move backward
+          this.currentStage--;
+        }
+      },
+      handleSubmitFirstBtn() {
+        this.submitted = true;
+
+        // stop here if form is invalid
+        this.$v.$touch();
+        if (this.$v.$invalid) {
+          return;
+        }
+
+        this.updateStage(1)
+        // this.appendFields()
+        this.submitted = false
+      },
+
+      handleLastSubmit() {
+        this.submitted = true;
+
+        // stop here if form is invalid
+        this.$v.$touch();
+        if (this.$v.$invalid) {
+          return;
+        }
+
+        console.log("Form is correct.")
+      },
+
+      // appendFields() {
+      //   if (this.jsonStatham.hasOwnProperty(this.trafficDetails.platform)) {
+      //     for (const [key, value] of Object.entries(this.jsonStatham[this.trafficDetails.platform])) {
+      //       this.integrationParams[key] = value
+      //     }
+      //   }
+      // },
+    },
+    validations() {
+      return {
+        integrationParams: this.addRequiredValidation,
+        trafficDetails: {
+          brand: {required, minLength: minLength(3)},
+          platform: {required, minLength: minLength(3)},
+          whitelabel: {required, minLength: minLength(3)},
+          country: {required, minLength: minLength(2)},
+          campaignName: {required, minLength: minLength(2)}
+        }
+      }
+    },
 }
 </script>
 

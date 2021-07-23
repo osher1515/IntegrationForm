@@ -142,7 +142,7 @@
   {
     "id": 21,
     "name": "Antilope",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":true}]",
     "created": "2021-07-13 10:34:44",
     "updated": "2021-07-13 10:34:44"
   },
