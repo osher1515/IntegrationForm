@@ -93,14 +93,14 @@
   {
     "id": 14,
     "name": "AivixV2",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"aff_id\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"bearer\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"offer_id\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
     "created": "2021-07-13 10:34:43",
     "updated": "2021-07-13 10:34:43"
   },
   {
     "id": 15,
     "name": "AK90",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"NULL\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"aff_id\",\"mandatory\":true},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
     "created": "2021-07-13 10:34:43",
     "updated": "2021-07-13 10:34:43"
   },
@@ -114,7 +114,7 @@
   {
     "id": 17,
     "name": "AlgoLead",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"subCampaignID\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"auth\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"partner_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"tracking_id\",\"mandatory\":true},{\"tbName\":\"campaign\",\"plName\":\"funnelid\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":true}]",
     "created": "2021-07-13 10:34:43",
     "updated": "2021-07-13 10:34:43"
   },
@@ -128,7 +128,7 @@
   {
     "id": 19,
     "name": "AllGlobalMarketsV2",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"username\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"password\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"source\",\"plName\":\"desk_id\",\"mandatory\":true},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":true}]",
     "created": "2021-07-13 10:34:44",
     "updated": "2021-07-13 10:34:44"
   },
@@ -212,7 +212,7 @@
   {
     "id": 31,
     "name": "Bnology",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":true}]",
     "created": "2021-07-13 10:34:45",
     "updated": "2021-07-13 10:34:45"
   },
@@ -247,7 +247,7 @@
   {
     "id": 36,
     "name": "CellExpert",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"username\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"password\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":true}]",
     "created": "2021-07-13 10:34:46",
     "updated": "2021-07-13 10:34:46"
   },
@@ -261,7 +261,7 @@
   {
     "id": 38,
     "name": "CFDGlobal",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"source\",\"mandatory\":true},{\"tbName\":\"campaign\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":true}]",
     "created": "2021-07-13 10:34:46",
     "updated": "2021-07-13 10:34:46"
   },
@@ -450,7 +450,7 @@
   {
     "id": 65,
     "name": "CryptoMusu",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"affiliate_client_id\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"affiliate_secret_key\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
     "created": "2021-07-13 10:34:50",
     "updated": "2021-07-13 10:34:50"
   },
@@ -471,7 +471,7 @@
   {
     "id": 68,
     "name": "DrMailer",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"password\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"api_key\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
     "created": "2021-07-13 10:34:51",
     "updated": "2021-07-13 10:34:51"
   },
@@ -548,7 +548,7 @@
   {
     "id": 79,
     "name": "Finantic",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"username\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"password\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"public_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"secret\",\"mandatory\":true},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
     "created": "2021-07-13 10:34:52",
     "updated": "2021-07-13 10:34:52"
   },
@@ -597,7 +597,7 @@
   {
     "id": 86,
     "name": "FireFtdV2",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"username\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
     "created": "2021-07-13 10:34:53",
     "updated": "2021-07-13 10:34:53"
   },
@@ -625,21 +625,21 @@
   {
     "id": 90,
     "name": "Foxed",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"worker_login_id\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":true}]",
     "created": "2021-07-13 10:34:54",
     "updated": "2021-07-13 10:34:54"
   },
   {
     "id": 91,
     "name": "FPMAffiliates",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"offer_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"null\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
     "created": "2021-07-13 10:34:54",
     "updated": "2021-07-13 10:34:54"
   },
   {
     "id": 92,
     "name": "FutureCFD",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"offer_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"null\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
     "created": "2021-07-13 10:34:54",
     "updated": "2021-07-13 10:34:54"
   },
@@ -681,14 +681,14 @@
   {
     "id": 98,
     "name": "GetFinancial",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"username\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"password\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":true}]",
     "created": "2021-07-13 10:34:55",
     "updated": "2021-07-13 10:34:55"
   },
   {
     "id": 99,
     "name": "GlobalBanco",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"source\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
     "created": "2021-07-13 10:34:55",
     "updated": "2021-07-13 10:34:55"
   },
@@ -828,7 +828,7 @@
   {
     "id": 119,
     "name": "JunoDigital",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"api_username\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"api_password\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"source\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
     "created": "2021-07-13 10:34:58",
     "updated": "2021-07-13 10:34:58"
   },
@@ -849,7 +849,7 @@
   {
     "id": 122,
     "name": "Leads8",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"login\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"pass\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"source\",\"mandatory\":true},{\"tbName\":\"campaign\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":true}]",
     "created": "2021-07-13 10:34:59",
     "updated": "2021-07-13 10:34:59"
   },
@@ -863,7 +863,7 @@
   {
     "id": 124,
     "name": "LeadsDeck",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
     "created": "2021-07-13 10:34:59",
     "updated": "2021-07-13 10:34:59"
   },
@@ -905,7 +905,7 @@
   {
     "id": 130,
     "name": "LeverateAffiliates",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"APIKEY\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"username\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"password\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"platform_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":true}]",
     "created": "2021-07-13 10:35:00",
     "updated": "2021-07-13 10:35:00"
   },
@@ -919,7 +919,7 @@
   {
     "id": 132,
     "name": "M500V2",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
     "created": "2021-07-13 10:35:00",
     "updated": "2021-07-13 10:35:00"
   },
@@ -954,7 +954,7 @@
   {
     "id": 137,
     "name": "MegaSource",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"api_user\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"bearer\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
     "created": "2021-07-13 10:35:01",
     "updated": "2021-07-13 10:35:01"
   },
@@ -1262,14 +1262,14 @@
   {
     "id": 181,
     "name": "Proftit",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"api_user\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"api_pass\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"brand_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"tradingAccountGroupId\",\"mandatory\":true},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":true}]",
     "created": "2021-07-13 10:35:07",
     "updated": "2021-07-13 10:35:07"
   },
   {
     "id": 182,
     "name": "Puma",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"id\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":false},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":true}]",
     "created": "2021-07-13 10:35:07",
     "updated": "2021-07-13 10:35:07"
   },
@@ -1374,14 +1374,14 @@
   {
     "id": 197,
     "name": "Simpletrading",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"affid\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"secretKey\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"brand_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":NULL},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
     "created": "2021-07-13 10:35:09",
     "updated": "2021-07-13 10:35:09"
   },
   {
     "id": 198,
     "name": "Skale",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"username\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"password\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"secret_key\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
     "created": "2021-07-13 10:35:09",
     "updated": "2021-07-13 10:35:09"
   },
@@ -1423,7 +1423,7 @@
   {
     "id": 204,
     "name": "SpotMTPro",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"username\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"password\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":false},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":true}]",
     "created": "2021-07-13 10:35:10",
     "updated": "2021-07-13 10:35:10"
   },
@@ -1451,7 +1451,7 @@
   {
     "id": 208,
     "name": "StarlabV2",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"secret_key\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
     "created": "2021-07-13 10:35:11",
     "updated": "2021-07-13 10:35:11"
   },
@@ -1556,7 +1556,7 @@
   {
     "id": 223,
     "name": "TradoLogic",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"username\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"password\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"account_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
     "created": "2021-07-13 10:35:13",
     "updated": "2021-07-13 10:35:13"
   },
@@ -1570,7 +1570,7 @@
   {
     "id": 225,
     "name": "Trafficon",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"username\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"password\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"partner_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"offer_id\",\"mandatory\":true},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":true}]",
     "created": "2021-07-13 10:35:13",
     "updated": "2021-07-13 10:35:13"
   },
@@ -1703,7 +1703,7 @@
   {
     "id": 244,
     "name": "XCritical",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"api_username\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"api_password\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":true}]",
     "created": "2021-07-13 10:35:16",
     "updated": "2021-07-13 10:35:16"
   },
@@ -1724,7 +1724,7 @@
   {
     "id": 247,
     "name": "Xproad",
-    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"api_pass\",\"plName\":\"api_token\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"affiliate_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":true},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":false}]",
+    "structure": "[{\"tbName\":\"api_user\",\"plName\":\"publisher_id\",\"mandatory\":true},{\"tbName\":\"api_pass\",\"plName\":\"api_key\",\"mandatory\":true},{\"tbName\":\"partner_id\",\"plName\":\"offer_hash_id\",\"mandatory\":true},{\"tbName\":\"source\",\"plName\":\"NULL\",\"mandatory\":false},{\"tbName\":\"campaign\",\"plName\":\"campaign_id\",\"mandatory\":false},{\"tbName\":\"json\",\"plName\":\"Addon\",\"mandatory\":true}]",
     "created": "2021-07-13 10:35:17",
     "updated": "2021-07-13 10:35:17"
   },

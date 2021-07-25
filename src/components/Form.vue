@@ -12,7 +12,7 @@
         <legend>Step 2 - Traffic Flow</legend>
         <ValidationProvider name="whitelabel" rules="required" v-slot="{ errors }" class="spacebet">
           <label for="whitelabel" class="inputLabel">Who Sends the traffic?</label> <span class="redStar">*</span>
-          <input type="text" v-model="trafficDetails.whitelabel" id="whitelabel">
+           <input type="text" v-model="trafficDetails.whitelabel" id="whitelabel">
           <div>
             <span class="invalid-feedback">{{ errors[0] }}</span>
           </div>
@@ -61,9 +61,10 @@
             </div>
         </ValidationProvider>
       </fieldset>
-
+      <button @click="goToPrevious(0)" v-if="currentStep === 2 || currentStep === 3">Previous</button>
       <button type="submit">Next</button>
-      <button @click="fillParams">Fill</button>
+<!--      <button @click="fillParams">Fill</button>-->
+      <h3>Struggle with the form? Contact our support</h3>
     </form>
   </ValidationObserver>
 </template>
@@ -134,6 +135,12 @@ export default {
         this.currentStep++;
       },
 
+      goToPrevious(value){
+        if(value == 0){
+          this.currentStep--;
+        }
+      },
+
       appendFields(){
         //Only for this moment I'll put it right now
         if (this.jsonStatham.hasOwnProperty(this.trafficDetails.platform)) {
@@ -166,6 +173,10 @@ legend{
   font-family: Ubuntu;
   letter-spacing: 2px;
   color: #fff;
+}
+
+i {
+  margin-right: 10px;
 }
 
 div{
