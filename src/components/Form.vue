@@ -1,70 +1,92 @@
 <template>
-  <form @submit.prevent>
-    <!--Integration Stage 1 -->
-    <template v-if="currentStage === 1">
-      <h2>Step 1 - IP's to whitelists</h2>
-      <h3>Please make sure you whitelist our IP's</h3>
-      <p v-for="(ips) in ipAddresses" :key="ips">{{ ips }}</p>
-      <button @click="updateStage(1)">Traffic Details</button>
-    </template>
-    <!--Integration Stage 2 -->
-    <template v-if="currentStage === 2">
-      <h2>Step 2 - Traffic Flow</h2>
-      <h3>Describe traffic flow</h3>
-      <div class="inputGroup">
-        <label for="whitelabel" class="inputLabel">Who Sends the traffic?</label> <span class="redStar">*</span>
-        <input type="text" v-model="trafficDetails.whitelabel" id="whitelabel"/>
-        <span v-if="submitted && !$v.trafficDetails.whitelabel.required" class="invalid-feedback">It's a required field, please fill it</span>
-      </div>
-      <div>
-        <label for="platform" class="inputLabel">Which platform are you using?</label> <span class="redStar">*</span>
-        <input type="text" v-model="trafficDetails.platform" id="platform"/>
-        <span v-if="submitted && !$v.trafficDetails.platform.required" class="invalid-feedback">It's a required field, please fill it</span>
-      </div>
-      <div>
-        <label for="brand" class="inputLabel">Who receive the traffic?</label> <span class="redStar">*</span>
-        <input type="text" v-model="trafficDetails.brand" id="brand"/>
-        <span v-if="submitted && !$v.trafficDetails.brand.required" class="invalid-feedback">It's a required field, please fill it</span>
-      </div>
-      <div>
-        <label for="country" class="inputLabel">From which country to test?</label> <span class="redStar">*</span>
-        <input type="text" v-model="trafficDetails.country" id="country">
-        <span v-if="submitted && !$v.trafficDetails.country.required" class="invalid-feedback">It's a required field, please fill it</span>
-      </div>
-      <div>
-        <label for="campaign" class="inputLabel">How to call the campaign?</label> <span class="redStar">*</span>
-        <input type="text" v-model="trafficDetails.campaignName" id="campaign"/>
-        <span v-if="submitted && !$v.trafficDetails.campaignName.required" class="invalid-feedback">It's a required field, please fill it</span>
-      </div>
-      <button @click="updateStage(0)">Previous Stage</button>
-      <button @click="fillParams">Fill Params</button>
-      <button @click="(e) => handleSubmitFirstBtn(e)">Integration Params</button>
-    </template>
-    <!-- Integration Stage 3 -->
-    <template v-if="currentStage === 3">
-      <h2>Step 3 - Additional Params</h2>
-      <h3>Please fill all the parameters needed</h3>
-      <div v-for="(param, key, index) in integrationParams" :key="key">
-        <label class="inputLabel" :for="key">Please fill in {{ key }} param</label> <span class="redStar">*</span>
-        <input v-model="integrationParams[key]" :id="key">
-<!--        <span v-if="submitted && !$v.integrationParams[key].required" class="invalid-feedback">It's a required field, please fill it</span>-->
-      </div>
-      <button @click="updateStage(0)">Previous Stage</button>
-      <button @click="handleLastSubmit">Create Integration</button>
-    </template>
-  </form>
+  <ValidationObserver v-slot="{ handleSubmit }">
+    <form @submit.prevent="handleSubmit(onSubmit)">
+      <img src="@/assets/tigloo.webp" alt="">
+      <fieldset v-if="currentStep === 1">
+        <legend>Whitelist Our IP's</legend>
+        <h3>Please make sure you whitelist our IP's</h3>
+        <p v-for="(ips) in ipAddresses" :key="ips">{{ ips }}</p>
+      </fieldset>
+
+      <fieldset v-else-if="currentStep === 2">
+        <legend>Step 2 - Traffic Flow</legend>
+        <ValidationProvider name="whitelabel" rules="required" v-slot="{ errors }" class="spacebet">
+          <label for="whitelabel" class="inputLabel">Who Sends the traffic?</label> <span class="redStar">*</span>
+          <input type="text" v-model="trafficDetails.whitelabel" id="whitelabel">
+          <div>
+            <span class="invalid-feedback">{{ errors[0] }}</span>
+          </div>
+        </ValidationProvider>
+
+        <ValidationProvider name="platform" rules="required" v-slot="{ errors }">
+          <label for="platform" class="inputLabel">Which platform are you using?</label> <span class="redStar">*</span>
+          <input type="text" v-model="trafficDetails.platform" id="platform"/>
+          <div>
+            <span class="invalid-feedback">{{ errors[0] }}</span>
+          </div>
+        </ValidationProvider>
+
+        <ValidationProvider name="brand" rules="required" v-slot="{ errors }">
+          <label for="brand" class="inputLabel">Who receive the traffic?</label> <span class="redStar">*</span>
+          <input type="text" v-model="trafficDetails.brand" id="brand"/>
+          <div>
+            <span class="invalid-feedback">{{ errors[0] }}</span>
+          </div>
+        </ValidationProvider>
+
+        <ValidationProvider name="country" rules="required" v-slot="{ errors }">
+          <label for="country" class="inputLabel">From which country to test?</label> <span class="redStar">*</span>
+          <input type="text" v-model="trafficDetails.country" id="country">
+          <div>
+            <span class="invalid-feedback">{{ errors[0] }}</span>
+          </div>
+        </ValidationProvider>
+
+        <ValidationProvider name="campaignName" rules="required" v-slot="{ errors }">
+          <label for="campaign" class="inputLabel">How to call the campaign?</label> <span class="redStar">*</span>
+          <input type="text" v-model="trafficDetails.campaignName" id="campaign"/>
+          <div>
+            <span class="invalid-feedback">{{ errors[0] }}</span>
+          </div>
+        </ValidationProvider>
+      </fieldset>
+
+      <fieldset v-else-if="currentStep === 3">
+        <legend>Step 3 - Integration Params</legend>
+        <ValidationProvider name="namedField" rules="required" v-slot="{ errors }" v-for="(param, key, index) in integrationParams" :key="key">
+            <label class="inputLabel" :for="key">Please fill in {{ key }} param</label> <span class="redStar">*</span>
+            <input v-model="integrationParams[key]" :id="key" name="namedField">
+            <div>
+              <span class="invalid-feedback">{{ errors[0] }}</span>
+            </div>
+        </ValidationProvider>
+      </fieldset>
+
+      <button type="submit">Next</button>
+      <button @click="fillParams">Fill</button>
+    </form>
+  </ValidationObserver>
 </template>
 
 <script>
-import { required, minLength} from 'vuelidate/lib/validators'
-import useVuelidate from '@vuelidate/core'
+import { ValidationProvider, extend , ValidationObserver } from 'vee-validate';
+import { required } from 'vee-validate/dist/rules';
+
+
+extend('required', {
+  ...required,
+  message: 'You must fill in the field'
+})
 
 export default {
   name: "Form",
+  components: {
+    ValidationProvider,
+    ValidationObserver
+  },
   data() {
     return {
-      $v: useVuelidate(),
-      currentStage: 1,
+      currentStep: 1,
       ipAddresses: ["34.242.60.225", "52.18.206.144", "82.81.51.192", "213.57.116.202", "82.81.48.111", "62.90.205.233"],
       trafficDetails: {
         brand: '',
@@ -74,7 +96,6 @@ export default {
         campaignName: ''
       },
       integrationParams: {},
-      submitted: false,
 
       jsonStatham: {
         "Trackbox": {
@@ -91,23 +112,6 @@ export default {
       },
     }
   },
-  computed: {
-    params() {
-      if (this.jsonStatham.hasOwnProperty(this.trafficDetails.platform)) {
-        for (const [key, value] of Object.entries(this.jsonStatham[this.trafficDetails.platform])) {
-          this.integrationParams[key] = value;
-        }
-      }
-      return this.integrationParams;
-    },
-    addRequiredValidation() {
-      //Here I need somehow to add validations to params Object.
-      for (const key in this.integrationParams) {
-          this.$options.validations().integrationParams[key].required = required
-         }
-      }
-    },
-
     methods: {
       fillParams() {
         this.trafficDetails.whitelabel = "Kalite"
@@ -116,96 +120,76 @@ export default {
         this.trafficDetails.country = "Israel"
         this.trafficDetails.campaignName = "TestCampaign"
       },
-      updateStage(value) {
-        //Move forward
-        if (value === 1) {
-          this.currentStage++;
-        } else { //Move backward
-          this.currentStage--;
+      onSubmit () {
+        if (this.currentStep === 2){
+          this.appendFields()
         }
-      },
-      handleSubmitFirstBtn() {
-        this.submitted = true;
 
-        // stop here if form is invalid
-        this.$v.$touch();
-        if (this.$v.$invalid) {
+
+        if (this.currentStep === 3) {
+          alert('Form submitted!');
           return;
         }
 
-        this.updateStage(1)
-        // this.appendFields()
-        this.submitted = false
+        this.currentStep++;
       },
 
-      handleLastSubmit() {
-        this.submitted = true;
-
-        // stop here if form is invalid
-        this.$v.$touch();
-        if (this.$v.$invalid) {
-          return;
+      appendFields(){
+        //Only for this moment I'll put it right now
+        if (this.jsonStatham.hasOwnProperty(this.trafficDetails.platform)) {
+          for (const [key, value] of Object.entries(this.jsonStatham[this.trafficDetails.platform])) {
+            this.integrationParams[key] = value;
+          }
         }
-
-        console.log("Form is correct.")
       },
-
-      // appendFields() {
-      //   if (this.jsonStatham.hasOwnProperty(this.trafficDetails.platform)) {
-      //     for (const [key, value] of Object.entries(this.jsonStatham[this.trafficDetails.platform])) {
-      //       this.integrationParams[key] = value
-      //     }
-      //   }
-      // },
-    },
-    validations() {
-      return {
-        integrationParams: this.addRequiredValidation,
-        trafficDetails: {
-          brand: {required, minLength: minLength(3)},
-          platform: {required, minLength: minLength(3)},
-          whitelabel: {required, minLength: minLength(3)},
-          country: {required, minLength: minLength(2)},
-          campaignName: {required, minLength: minLength(2)}
-        }
-      }
     },
 }
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+
 html {
   height: 100%;
-
 }
 form {
   max-width: 340px;
   margin: 30px auto;
-  background-color: #dee2e6;
-  padding: 40px;
+  background-color: #495057;
+  padding: 50px;
   border-radius: 16px;
 }
+
+legend{
+  font-family: Ubuntu;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+div{
+  margin-bottom: 2px;
+}
+
 h2 {
   font-size: 20px;
-
   text-align: center;
   margin-bottom: 10px;
 }
 h3 {
-  font-weight: bold;
+  font-weight: 500;
+  font-family: Questrial;
+  letter-spacing: 1px;
   font-size: 16px;
   text-align: center;
-  color: #343a40;
+  color: #fff;
   margin-bottom: 20px;
 }
-h4 {
-  font-weight: bold;
-  font-size: 14px;
-  color: #343a40;
-  margin-bottom: 20px;
-  font-family: 'Josefin Sans', sans-serif;
-}
+
 p {
+  font-family: Questrial;
+  color: #fff;
   margin: 0;
 }
 button {
@@ -216,19 +200,12 @@ button {
   border: none;
   text-align: center;
   color: white;
-  font-weight: bold;
+  font-family: Questrial;
+  font-weight: 500;
   border-radius: 10px;
 }
-label {
-  color: #aaa;
-  display: inline-block;
-  margin-top: 10px;
-  text-align: left;
-  justify-content: left;
-  font-size: 12px;
-  letter-spacing: 1px;
-  font-weight: bold;
-}
+
+
 input {
   outline: none;
   border: 1px solid #343a40;
@@ -236,19 +213,24 @@ input {
   padding: 5px 0;
   margin: 10px 0 5px 0;
   width: 100%;
+  font-family: Questrial;
 }
 .redStar {
   color: red;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
 }
 .inputLabel{
-  color: #343a40;
+  color: #f8f9fa;
   font-weight: bold;
   text-align: left;
+  font-size: 14px;
+  font-family: Questrial;
+  margin-top: 8px;
 }
 .invalid-feedback {
   color: red;
-  font-weight: 500;
+  font-family: Questrial;
+  font-weight: 600;
 }
 </style>
