@@ -1,92 +1,71 @@
 <template>
-  <ValidationObserver v-slot="{ handleSubmit }">
-    <form @submit.prevent="handleSubmit(onSubmit)">
+    <form @submit.prevent>
       <img src="@/assets/tigloo.webp" alt="">
       <fieldset v-if="currentStep === 1">
         <legend>Whitelist Our IP's</legend>
         <h3>Please make sure you whitelist our IP's</h3>
         <p v-for="(ips) in ipAddresses" :key="ips">{{ ips }}</p>
+        <button @click="stepChanger(1), validationAndInputs">Next Stage</button>
       </fieldset>
 
       <fieldset v-else-if="currentStep === 2">
         <legend>Step 2 - Traffic Flow</legend>
-        <ValidationProvider name="whitelabel" rules="required" v-slot="{ errors }" class="spacebet">
-          <label for="whitelabel" class="inputLabel">Who Sends the traffic?</label> <span class="redStar">*</span>
-           <input type="text" v-model="trafficDetails.whitelabel" id="whitelabel">
           <div>
-            <span class="invalid-feedback">{{ errors[0] }}</span>
+            <label for="whitelabel" class="inputLabel">Who Sends the traffic?</label> <span class="redStar">*</span>
+            <input type="text" v-model="trafficDetails.whitelabel" id="whitelabel">
+            <span v-if="submitted && !$v.trafficDetails.whitelabel.required" class="invalid-feedback">It's a required field, please fill it</span>
           </div>
-        </ValidationProvider>
 
-        <ValidationProvider name="platform" rules="required" v-slot="{ errors }">
-          <label for="platform" class="inputLabel">Which platform are you using?</label> <span class="redStar">*</span>
-          <input type="text" v-model="trafficDetails.platform" id="platform"/>
           <div>
-            <span class="invalid-feedback">{{ errors[0] }}</span>
+            <label for="platform" class="inputLabel">Which platform are you using?</label> <span class="redStar">*</span>
+            <input type="text" v-model="trafficDetails.platform" id="platform"/>
+            <span v-if="submitted && !$v.trafficDetails.whitelabel.required" class="invalid-feedback">It's a required field, please fill it</span>
           </div>
-        </ValidationProvider>
 
-        <ValidationProvider name="brand" rules="required" v-slot="{ errors }">
-          <label for="brand" class="inputLabel">Who receive the traffic?</label> <span class="redStar">*</span>
-          <input type="text" v-model="trafficDetails.brand" id="brand"/>
           <div>
-            <span class="invalid-feedback">{{ errors[0] }}</span>
+            <label for="brand" class="inputLabel">Who receive the traffic?</label> <span class="redStar">*</span>
+            <input type="text" v-model="trafficDetails.brand" id="brand"/>
+            <span v-if="submitted && !$v.trafficDetails.whitelabel.required" class="invalid-feedback">It's a required field, please fill it</span>
           </div>
-        </ValidationProvider>
 
-        <ValidationProvider name="country" rules="required" v-slot="{ errors }">
+        <div>
           <label for="country" class="inputLabel">From which country to test?</label> <span class="redStar">*</span>
           <input type="text" v-model="trafficDetails.country" id="country">
-          <div>
-            <span class="invalid-feedback">{{ errors[0] }}</span>
-          </div>
-        </ValidationProvider>
+          <span v-if="submitted && !$v.trafficDetails.whitelabel.required" class="invalid-feedback">It's a required field, please fill it</span>
+        </div>
 
-        <ValidationProvider name="campaignName" rules="required" v-slot="{ errors }">
-          <label for="campaign" class="inputLabel">How to call the campaign?</label> <span class="redStar">*</span>
-          <input type="text" v-model="trafficDetails.campaignName" id="campaign"/>
           <div>
-            <span class="invalid-feedback">{{ errors[0] }}</span>
+            <label for="campaign" class="inputLabel">How to call the campaign?</label> <span class="redStar">*</span>
+            <input type="text" v-model="trafficDetails.campaignName" id="campaign"/>
+            <span v-if="submitted && !$v.trafficDetails.whitelabel.required" class="invalid-feedback">It's a required field, please fill it</span>
           </div>
-        </ValidationProvider>
+        <button @click="stepChanger(0)">Previous Stage</button>
+        <button @click="validationAndInputs">Next Stage</button>
       </fieldset>
 
       <fieldset v-else-if="currentStep === 3">
         <legend>Step 3 - Integration Params</legend>
-        <ValidationProvider name="namedField" rules="required" v-slot="{ errors }" v-for="(param, key, index) in integrationParams" :key="key">
-            <label class="inputLabel" :for="key">Please fill in {{ key }} param</label> <span class="redStar">*</span>
-            <input v-model="integrationParams[key]" :id="key" name="namedField">
-            <div>
-              <span class="invalid-feedback">{{ errors[0] }}</span>
-            </div>
-        </ValidationProvider>
+        <div v-for="(param, key, index) in integrationParams" :key="key">
+          <label class="inputLabel" :for="key">Please fill in {{ key }} param</label> <span class="redStar">*</span>
+          <input v-model="integrationParams[key]" :id="key" name="namedField">
+        </div>
+        <button @click="stepChanger(0)">Previous Stage</button>
       </fieldset>
-      <button @click="goToPrevious(0)" v-if="currentStep === 2 || currentStep === 3">Previous</button>
-      <button type="submit">Next</button>
-<!--      <button @click="fillParams">Fill</button>-->
-      <h3>Struggle with the form? Contact our support</h3>
+      <button @click="fillParams" v-if="currentStep === 2">Fill parameters</button>
+      <h3>Struggling with the form? <br>Contact our <a href="https://join.skype.com/invite/pzc3tcenqags">support</a><br> </h3>
     </form>
-  </ValidationObserver>
 </template>
 
 <script>
-import { ValidationProvider, extend , ValidationObserver } from 'vee-validate';
-import { required } from 'vee-validate/dist/rules';
+import { required, minLength} from 'vuelidate/lib/validators'
+import useVuelidate from '@vuelidate/core'
 
-
-extend('required', {
-  ...required,
-  message: 'You must fill in the field'
-})
 
 export default {
   name: "Form",
-  components: {
-    ValidationProvider,
-    ValidationObserver
-  },
   data() {
     return {
+      $v: useVuelidate(),
       currentStep: 1,
       ipAddresses: ["34.242.60.225", "52.18.206.144", "82.81.51.192", "213.57.116.202", "82.81.48.111", "62.90.205.233"],
       trafficDetails: {
@@ -96,6 +75,7 @@ export default {
         country: '',
         campaignName: ''
       },
+      submitted: false,
       integrationParams: {},
 
       jsonStatham: {
@@ -113,44 +93,60 @@ export default {
       },
     }
   },
-    methods: {
-      fillParams() {
-        this.trafficDetails.whitelabel = "Kalite"
-        this.trafficDetails.platform = "Trackbox"
-        this.trafficDetails.brand = "HashTrade"
-        this.trafficDetails.country = "Israel"
-        this.trafficDetails.campaignName = "TestCampaign"
-      },
-      onSubmit () {
-        if (this.currentStep === 2){
-          this.appendFields()
-        }
 
 
-        if (this.currentStep === 3) {
-          alert('Form submitted!');
-          return;
-        }
+  validations() {
+    return {
+      trafficDetails: {
+        brand: {required, minLength: minLength(3)},
+        platform: {required, minLength: minLength(3)},
+        whitelabel: {required, minLength: minLength(3)},
+        country: {required, minLength: minLength(2)},
+        campaignName: {required, minLength: minLength(2)}
+      }
+    }
+  },
 
-        this.currentStep++;
-      },
+  methods: {
 
-      goToPrevious(value){
-        if(value == 0){
-          this.currentStep--;
-        }
-      },
-
-      appendFields(){
-        //Only for this moment I'll put it right now
-        if (this.jsonStatham.hasOwnProperty(this.trafficDetails.platform)) {
-          for (const [key, value] of Object.entries(this.jsonStatham[this.trafficDetails.platform])) {
-            this.integrationParams[key] = value;
-          }
-        }
-      },
+    fillParams() {
+      //Method to fill params to check the form, can be removed
+      this.trafficDetails.whitelabel = "Kalite"
+      this.trafficDetails.platform = "Trackbox"
+      this.trafficDetails.brand = "HashTrade"
+      this.trafficDetails.country = "Israel"
+      this.trafficDetails.campaignName = "TestCampaign"
     },
+
+    stepChanger(value) {
+      if (value === 0) {
+        this.currentStep--;
+      }
+      if (value === 1) {
+        this.currentStep++;
+      }
+    },
+    validationAndInputs(){
+      this.submitted = true;
+      // stop here if form is invalid
+      this.$v.$touch();
+      if (this.$v.$invalid) {
+        return;
+      }
+      this.stepChanger(1)
+      this.appendFields()
+      this.submitted = false;
+    },
+    appendFields(){
+      if (this.jsonStatham.hasOwnProperty(this.trafficDetails.platform)) {
+        for (const [key, value] of Object.entries(this.jsonStatham[this.trafficDetails.platform])) {
+          this.integrationParams[key] = value;
+        }
+      }
+    },
+  }
 }
+
 </script>
 
 <style scoped>
@@ -198,11 +194,12 @@ h3 {
   margin-bottom: 20px;
 }
 
-p {
+p, a {
   font-family: Questrial;
   color: #fff;
   margin: 0;
 }
+
 button {
   background-color: #9d4edd;
   padding: 10px 20px;
@@ -242,6 +239,6 @@ input {
 .invalid-feedback {
   color: red;
   font-family: Questrial;
-  font-weight: 600;
+  font-weight: 500;
 }
 </style>
